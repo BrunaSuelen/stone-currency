@@ -1,0 +1,23 @@
+.form-input {
+  grid-area: teste1;
+
+  label {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2e3742;
+  }
+
+  input {
+    display: flex;
+    align-items: flex-start;
+    padding: 16px;
+    width: 168px;
+    height: 56px;
+    background: #ffffff;
+    border: 1px solid #d7e0eb;
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0px 8px 4px #00000014;
+  }
+}
