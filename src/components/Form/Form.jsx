@@ -4,11 +4,14 @@ import InputText from '../InputText/InputText';
 import './Form.scss'
 
 const Form = () => {
-  const [formValues, setFormValues] = useState({});
+  const [formValues, setFormValues] = useState({
+    dollar: 1.0,
+    stateFee: 0
+  });
 
   function onChangeInput(element) {
     let dataToSend = {...formValues};
-    dataToSend[element.id] = element.value;
+    dataToSend[element.id] = parseFloat(element.value);
 
     setFormValues(dataToSend);
   }
@@ -18,12 +21,14 @@ const Form = () => {
       <InputText 
         id='dollar'
         label='Dólar'
+        value='formValues.dollar'
         change={(e) => onChangeInput(e.target)}
       />
 
       <InputText
         id='stateFee'
         label='stateFee'
+        value='formValues.stateFee'
         change={(e) => onChangeInput(e.target)}
       />
     </form>
