@@ -22,6 +22,7 @@ const Form = () => {
         id='dollar'
         label='Dólar'
         value='formValues.dollar'
+        inputLeft='true'
         change={(e) => onChangeInput(e.target)}
       />
 

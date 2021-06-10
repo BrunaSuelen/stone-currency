@@ -5,10 +5,11 @@ import currencyMask from './currencyMask';
 import './InputText.scss'
 
 const InputText = (props) => {
-  const { id, label, change, value } = props;
+  const { id, label, change, inputLeft } = props;
+  const className = `form-input ${inputLeft ? 'input-text' : 'input-right'}`
 
   return (
-    <div className='form-input'>
+    <div className={className}>
       <label from={id}>{label}</label>
       { 
         id === 'dollar'
