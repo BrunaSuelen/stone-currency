@@ -1,6 +1,7 @@
 import React from 'react';
 import MaskedInput from 'react-text-mask'
-import currencyMask from './currencyMask';
+import dollarMask from '../../mask/dollarMask';
+import feeMask from '../../mask/feeMask';
 
 import './InputText.scss'
 
@@ -13,8 +14,8 @@ const InputText = (props) => {
       <label from={id}>{label}</label>
       { 
         id === 'dollar'
-        ? <MaskedInput id={id} mask={currencyMask} onChange={e => change(e)} />
-        : <input id={id} onChange={e => change(e)} />
+        ? <MaskedInput id={id} mask={dollarMask} onChange={e => change(e)} />
+        : <MaskedInput id={id} mask={feeMask} onChange={e => change(e)} />
       }
     </div>
   );
