@@ -6,7 +6,7 @@ const defaultMaskOptions = {
   includeThousandsSeparator: false,
   thousandsSeparatorSymbol: '',
   allowDecimal: true,
-  decimalSymbol: ',',
+  decimalSymbol: '.',
   decimalLimit: 2,
   integerLimit: 2,
   allowNegative: false,
