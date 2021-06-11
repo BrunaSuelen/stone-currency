@@ -1,7 +1,7 @@
 import createNumberMask from 'text-mask-addons/dist/createNumberMask'
 
 const defaultMaskOptions = {
-  prefix: '$',
+  prefix: '$ ',
   suffix: '',
   includeThousandsSeparator: true,
   thousandsSeparatorSymbol: '',
@@ -13,6 +13,6 @@ const defaultMaskOptions = {
   allowLeadingZeroes: false,
 }
 
-const currencyMask = createNumberMask(defaultMaskOptions)
+const dollarMask = createNumberMask(defaultMaskOptions)
 
-export default currencyMask;
+export default dollarMask;
