@@ -13,7 +13,7 @@ const InputText = (props) => {
       <label from={id}>{label}</label>
       { 
         id === 'dollar'
-        ? <MaskedInput mask={currencyMask} onChange={e => change(e)} />
+        ? <MaskedInput id={id} mask={currencyMask} onChange={e => change(e)} />
         : <input id={id} onChange={e => change(e)} />
       }
     </div>
