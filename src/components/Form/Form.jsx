@@ -7,19 +7,14 @@ import './Form.scss'
 
 const Form = () => {
   const [formValues, setFormValues] = useState({
-    dollar: 1.0,
+    dollar: 1.00,
     stateFee: 0,
     isCash: true
   });
 
-  function convertStringDollarInFloat(element) {
-    const value = element.value.replace('$', '').replace(',', '.');
-    onChangeInput(element, parseFloat(value));
-  }
-
-  function onChangeInput(element, value) {
+  function onChangeInput(element) {
     let dataToUpdate = {...formValues};
-    dataToUpdate[element.id] = value || element.value;
+    dataToUpdate[element.id] = element.value;
 
     setFormValues(dataToUpdate);
   }
@@ -39,7 +34,7 @@ const Form = () => {
         label='Dólar'
         value={formValues.dollar}
         inputLeft='true'
-        change={(e) => convertStringDollarInFloat(e.target)}
+        change={(e) => onChangeInput(e.target)}
       />
 
       <InputText
