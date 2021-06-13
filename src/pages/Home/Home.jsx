@@ -26,7 +26,7 @@ export default class Home extends Component {
       <React.Fragment>
         {
           this.state.showConversion
-          ? <Conversion></Conversion>
+          ? <Conversion formValues={this.state.formValues}></Conversion>
           : <Form showConversion={(prop) => this.showConvertion(prop)}></Form>
         }
       </React.Fragment>

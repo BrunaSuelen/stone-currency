@@ -39,7 +39,16 @@ const Form = (props) => {
 
   function initConversion(event) {
     event.preventDefault();
+    formatValuesToConvert();
     showConversion(formValues);
+  }
+
+  function formatValuesToConvert() {
+    let dataToUpdate = {...formValues};
+    dataToUpdate.dollar = parseFloat(dataToUpdate.dollar.replace('$', '').replace(',','.'));
+    dataToUpdate.stateFee = parseFloat(dataToUpdate.stateFee.replace('%', '').replace(',','.'));
+
+    setFormValues(dataToUpdate);
   }
   
   return (
