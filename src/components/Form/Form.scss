@@ -1,38 +1,41 @@
 form {
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-        "input-left input-right"
-        "type-purchase-radio ."
-        "button .";
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "input-left input-right"
+    "type-purchase-radio ."
+    "button .";
+  width: fit-content;
 }
 
 .button-convert {
-    grid-area: button;
+  grid-area: button;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 149px;
-    height: 56px;
-    background: #00AB63;
-    border: 1px solid #008B57;
-    box-sizing: border-box;
-    box-shadow: 0px 8px 4px #0d111b14;
-    border-radius: 8px;
-    flex-grow: 0;
-    margin: 32px 0px;
-    padding: 16px;
-    
-    font-size: 16px;
-    line-height: 24px;
-    color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 149px;
+  height: 56px;
+  background: #00ab63;
+  border: 1px solid #008b57;
+  box-sizing: border-box;
+  box-shadow: 0px 8px 4px #0d111b14;
+  border-radius: 8px;
+  flex-grow: 0;
+  margin: 32px 0px;
+  padding: 16px;
 
-    img { margin-right: 18px; }
+  font-size: 16px;
+  line-height: 24px;
+  color: white;
 
-    &:disabled {
-        background: #8C9CAD;
-        border: 1px solid #008B57;
-    }
+  img {
+    margin-right: 18px;
+  }
+
+  &:disabled {
+    background: #8c9cad;
+    border: 1px solid #008b57;
+  }
 }

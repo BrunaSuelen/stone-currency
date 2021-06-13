@@ -10,14 +10,14 @@
   input {
     display: flex;
     align-items: flex-start;
-    padding: 16px;
+    padding: 0 16px;
     width: 168px;
     height: 56px;
     background: #ffffff;
     border: 1px solid #d7e0eb;
-    box-sizing: border-box;
     border-radius: 4px;
     box-shadow: 0px 8px 4px #00000014;
+    margin-right: 24px;
   }
 
   &.input-text {

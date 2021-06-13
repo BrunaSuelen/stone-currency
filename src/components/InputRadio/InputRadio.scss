@@ -1,8 +1,10 @@
 .type-purchase-radio {
+  grid-area: type-purchase-radio;
+
   display: grid;
-  grid-template-rows: auto;
+  width: fit-content;
   grid-template-areas:
-    "type-purchase-p ."
+    "type-purchase-p type-purchase-p"
     "cash-radio card-radio";
 
   p {
@@ -16,13 +18,16 @@
 
 .cash-radio {
   grid-area: cash-radio;
+  margin-right: 16px;
 }
 
-.card-radio, .cash-radio {
+.card-radio,
+.cash-radio {
   display: flex;
   align-items: center;
 
   input {
+    margin: 0;
     margin-right: 8px;
     width: 24px;
     height: 24px;
