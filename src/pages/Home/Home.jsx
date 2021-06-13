@@ -1,15 +1,35 @@
 import React, { Component } from "react";
 
 import Form from "../../components/Form/Form";
+import Conversion from "../../components/Conversion/Conversion";
+
 export default class Home extends Component {
-  
-  teste(e) {
-    console.log(e)
+
+  constructor(props) {
+    super(props);
+    this.state = { 
+      showConversion: false,
+      formValues: {}
+    };
+  }
+
+  showConvertion(formValues) {
+    let dataToUpdate = {...this.state};
+    dataToUpdate.showConversion = true;
+    dataToUpdate.formValues = formValues;
+
+    this.setState(dataToUpdate);
   }
 
   render() {
     return (
-      <Form changeTeste={(e) => this.teste(e)}></Form>
+      <React.Fragment>
+        {
+          this.state.showConversion
+          ? <Conversion></Conversion>
+          : <Form showConversion={(prop) => this.showConvertion(prop)}></Form>
+        }
+      </React.Fragment>
     );
   }
 }

@@ -4,16 +4,15 @@ import InputText from '../InputText/InputText';
 import InputRadio from '../InputRadio/InputRadio';
 
 import convertIcon from "../../assets/icons/convert.svg";
-
 import './Form.scss'
 
-const Form = () => {
+const Form = (props) => {
+  const { showConversion } = props;
   const formValueDefault = {
     dollar: '1,0',
     stateFee: 0,
     isCash: true
   }
-
   const [formValues, setFormValues] = useState({
     dollar: formValueDefault.dollar,
     stateFee: formValueDefault.stateFee,
@@ -40,7 +39,7 @@ const Form = () => {
 
   function initConversion(event) {
     event.preventDefault();
-    console.log(formValues)
+    showConversion(formValues);
   }
   
   return (
