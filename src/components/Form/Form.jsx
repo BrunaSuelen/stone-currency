@@ -8,10 +8,16 @@ import convertIcon from "../../assets/icons/convert.svg";
 import './Form.scss'
 
 const Form = () => {
-  const [formValues, setFormValues] = useState({
-    dollar: 1.00,
+  const formValueDefault = {
+    dollar: '1,0',
     stateFee: 0,
     isCash: true
+  }
+
+  const [formValues, setFormValues] = useState({
+    dollar: formValueDefault.dollar,
+    stateFee: formValueDefault.stateFee,
+    isCash: formValueDefault.isCash
   });
 
   function onChangeInput(element) {
@@ -32,7 +38,8 @@ const Form = () => {
     return !formValues.stateFee || !formValues.dollar;
   }
 
-  function initConversion() {
+  function initConversion(event) {
+    event.preventDefault();
     console.log(formValues)
   }
   
@@ -41,8 +48,9 @@ const Form = () => {
       <InputText 
         id='dollar'
         label='Dólar'
-        value={formValues.dollar}
         inputLeft='true'
+        value={formValues.dollar}
+        defaultValue={formValueDefault.dollar}
         change={(e) => onChangeInput(e.target)}
       />
 
@@ -50,6 +58,7 @@ const Form = () => {
         id='stateFee'
         label='stateFee'
         value={formValues.stateFee}
+        defaultValue={formValueDefault.stateFee}
         change={(e) => onChangeInput(e.target)}
       />
 
@@ -58,9 +67,9 @@ const Form = () => {
       <button 
         className="button-convert"
         disabled={disableButton()}
-        onClick={(e) => onChangeIsCash(e)}
+        onClick={(e) => initConversion(e)}
       >
-        <img src={convertIcon} />
+        <img src={convertIcon} alt='Converter'/>
         Converter
       </button>
     </form>
