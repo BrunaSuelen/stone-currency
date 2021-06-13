@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import InputText from '../InputText/InputText';
 import InputRadio from '../InputRadio/InputRadio';
 
+import convertIcon from "../../assets/icons/convert.svg";
+
 import './Form.scss'
 
 const Form = () => {
@@ -24,7 +26,14 @@ const Form = () => {
     dataToUpdate.isCash = isCash;
 
     setFormValues(dataToUpdate);
-    console.log(dataToUpdate)
+  }
+
+  function disableButton() {
+    return !formValues.stateFee || !formValues.dollar;
+  }
+
+  function initConversion() {
+    console.log(formValues)
   }
   
   return (
@@ -45,6 +54,15 @@ const Form = () => {
       />
 
       <InputRadio change={(e) => onChangeIsCash(e)} />
+
+      <button 
+        className="button-convert"
+        disabled={disableButton()}
+        onClick={(e) => onChangeIsCash(e)}
+      >
+        <img src={convertIcon} />
+        Converter
+      </button>
     </form>
   );
 }
