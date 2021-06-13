@@ -44,11 +44,10 @@ const Form = (props) => {
   }
 
   function formatValuesToConvert() {
-    let dataToUpdate = {...formValues};
-    dataToUpdate.dollar = parseFloat(dataToUpdate.dollar.replace('$', '').replace(',','.'));
-    dataToUpdate.stateFee = parseFloat(dataToUpdate.stateFee.replace('%', '').replace(',','.'));
+    formValues.dollar = parseFloat(formValues.dollar.replace('$', '').replace(',','.'));
+    formValues.stateFee = parseFloat(formValues.stateFee.replace('%', '').replace(',','.'));
 
-    setFormValues(dataToUpdate);
+    setFormValues(formValues);
   }
   
   return (
