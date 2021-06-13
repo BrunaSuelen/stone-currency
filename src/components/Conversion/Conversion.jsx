@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-import { getQuotation, dollarToRealConverter } from '../../services/quotationService'
+import { getQuotation, dollarToRealConverter } from '../../services/quotationService';
+import './Conversion.scss';
 
 const Conversion = (props) => {
   const { formValues } = props;
@@ -33,17 +34,18 @@ const Conversion = (props) => {
   }
 
   function getFormatResult() {
-    const real = result.toString().replace('.', ',')
+    let real = formatFloatToFixed(result);
+    real = real.toString().replace('.', ',');
     return real;
   }
 
   return (
-    <div>
+    <React.Fragment>
       <h5>O resultado do cálculo é</h5>
-      <h1>R$ {formatFloatToFixed(result)}</h1>
+      <h1>R$ {getFormatResult()}</h1>
       <p>Compra no {formData.isCash ? 'dinheiro' : 'cartão'} e taxa de {getFormatResult()}%</p>
       <p>Cotação do dólar: $1,0 = R$ {formatFloatToFixed(formData.quotation)}</p>
-    </div>
+    </React.Fragment>
   );
 }
   
