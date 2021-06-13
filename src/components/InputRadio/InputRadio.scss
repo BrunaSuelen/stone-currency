@@ -1,0 +1,30 @@
+.type-purchase-radio {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "type-purchase-p ."
+    "cash-radio card-radio";
+
+  p {
+    grid-area: type-purchase-p;
+  }
+}
+
+.card-radio {
+  grid-area: card-radio;
+}
+
+.cash-radio {
+  grid-area: cash-radio;
+}
+
+.card-radio, .cash-radio {
+  display: flex;
+  align-items: center;
+
+  input {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+  }
+}
