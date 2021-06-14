@@ -8,8 +8,14 @@
     "cash-radio card-radio";
 
   p {
+    font-family: 'Roboto', sans-serif;
     grid-area: type-purchase-p;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2E3742;
     margin-top: 32px;
+    margin-bottom: 10px;
   }
 }
 
@@ -26,6 +32,13 @@
 .cash-radio {
   display: flex;
   align-items: center;
+
+  label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #2E3742;    
+  }
 
   input[type='radio'] {
     margin: 0;
