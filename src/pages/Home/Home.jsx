@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import Form from "../../components/Form/Form";
 import Conversion from "../../components/Conversion/Conversion";
+import Background from "../../templates/Background/Background";
+import Header from "../../templates/Header/Header";
 
 export default class Home extends Component {
 
@@ -23,13 +25,14 @@ export default class Home extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <Background>
+        <Header></Header>
         {
           this.state.showConversion
           ? <Conversion formValues={this.state.formValues}></Conversion>
           : <Form showConversion={(prop) => this.showConvertion(prop)}></Form>
         }
-      </React.Fragment>
+      </Background>
     );
   }
 }
