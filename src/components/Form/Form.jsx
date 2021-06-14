@@ -63,7 +63,7 @@ const Form = (props) => {
 
       <InputText
         id='stateFee'
-        label='stateFee'
+        label='Taxa do Estado'
         value={formValues.stateFee}
         defaultValue={formValueDefault.stateFee}
         change={(e) => onChangeInput(e.target)}
