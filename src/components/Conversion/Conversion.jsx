@@ -7,9 +7,12 @@ import './Conversion.scss';
 export default class Conversion extends Component {
   constructor(props) {
     super(props);
-    this.getConversion();
+    this.state = { result: 0, formData: props.formValues, error: false};
     this.goBack = props.goBack;
-    this.state = { result: 0, formData: props.formValues};
+  }
+
+  componentDidMount() {
+    this.getConversion();
   }
 
   getConversion() {
@@ -26,7 +29,7 @@ export default class Conversion extends Component {
         }
       })
       .catch(error => {
-        console.log(error);
+        this.setState({error: true});
       })
   }
 
@@ -46,17 +49,28 @@ export default class Conversion extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <button className="button-back" onClick={() => this.goBack()}>
           <img src={arrowBack} alt='Voltar'/>
           Voltar
         </button>
 
-        <h5>O resultado do cálculo é</h5>
-        <h1>R$ {this.getFormatResult()}</h1>
-        <p>Compra no {this.state.formData.isCash ? 'dinheiro' : 'cartão'} e taxa de {this.getFormatResult()}%</p>
-        <p>Cotação do dólar: $1,0 = R$ {this.formatFloatToFixed(this.state.formData.quotation)}</p>
-      </React.Fragment>
+        { 
+          this.state.error 
+            ? 
+              (<div>              
+                <h5>Desculpe, algo deu errado :(</h5>
+                <p>Verifique o acesso a internet, ou tente novamente mais tarde.</p>
+              </div>)
+            : 
+              (<div>              
+                <h5>O resultado do cálculo é</h5>
+                <h1>R$ {this.getFormatResult()}</h1>
+                <p>Compra no {this.state.formData.isCash ? 'dinheiro' : 'cartão'} e taxa de {this.getFormatResult()}%</p>
+                <p>Cotação do dólar: $1,0 = R$ {this.formatFloatToFixed(this.state.formData.quotation)}</p>
+              </div>)
+        }
+      </>
     );
   }
 }
