@@ -19,3 +19,15 @@
   top: 5vh;
   left: 5vh;
 }
+
+@media only screen and (max-width: 840px) {
+  .container-background img {
+    top: 20vh;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .container-background img {
+    top: 50vh;
+  }
+}
