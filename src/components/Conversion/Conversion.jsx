@@ -1,27 +1,26 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 
 import { getQuotation, dollarToRealConverter } from '../../services/quotationService';
 import './Conversion.scss';
 
-const Conversion = (props) => {
-  const { formValues } = props;
-  const [result, setResult] = useState(0);
-  const [formData, setFormData] = useState({});
+export default class Conversion extends Component {
+  constructor(props) {
+    super(props);
+    this.getConversion();
+    this.state = { result: 0, formData: props.formValues};
+  }
 
-  getConversion();
-
-  function getConversion() {
+  getConversion() {
     getQuotation()
       .then(response => {
         let quotation = parseFloat(response.data.USDBRL.bid);
       
         if (quotation) {
-          const dataToConversion = {...formValues};
+          const dataToConversion = {...this.state.formData};
           dataToConversion.quotation = quotation;
           const convertedValue = dollarToRealConverter(dataToConversion);
 
-          setFormData(dataToConversion);
-          setResult(convertedValue);
+          this.setState({result: convertedValue, formData: dataToConversion});
         }
       })
       .catch(error => {
@@ -29,24 +28,28 @@ const Conversion = (props) => {
       })
   }
 
-  function formatFloatToFixed(value) {
+  formatFloatToFixed(value) {
     return value ? value.toFixed(2) : value;
   }
 
-  function getFormatResult() {
-    let real = formatFloatToFixed(result);
-    real = real.toString().replace('.', ',');
+  getFormatResult() {
+    let real = 0;
+    if (this.state.result) {
+      real = this.formatFloatToFixed(this.state.result);
+      real = real.toString().replace('.', ',');
+    }
+
     return real;
   }
 
-  return (
-    <React.Fragment>
-      <h5>O resultado do cálculo é</h5>
-      <h1>R$ {getFormatResult()}</h1>
-      <p>Compra no {formData.isCash ? 'dinheiro' : 'cartão'} e taxa de {getFormatResult()}%</p>
-      <p>Cotação do dólar: $1,0 = R$ {formatFloatToFixed(formData.quotation)}</p>
-    </React.Fragment>
-  );
+  render() {
+    return (
+      <React.Fragment>
+        <h5>O resultado do cálculo é</h5>
+        <h1>R$ {this.getFormatResult()}</h1>
+        <p>Compra no {this.state.formData.isCash ? 'dinheiro' : 'cartão'} e taxa de {this.getFormatResult()}%</p>
+        <p>Cotação do dólar: $1,0 = R$ {this.formatFloatToFixed(this.state.formData.quotation)}</p>
+      </React.Fragment>
+    );
+  }
 }
-  
-export default Conversion;
