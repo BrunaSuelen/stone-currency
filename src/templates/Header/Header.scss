@@ -1,0 +1,28 @@
+.content {
+  display: flex;
+  margin-bottom: 10vh;
+
+  img {
+    width: 163px;
+  }
+
+  .date-currenty {
+    margin-left: 48px;
+
+    h5 {
+      width: auto;
+      font-size: 18px;
+      line-height: 21px;
+      color: #45505E;
+      margin-bottom: 0;
+    }
+
+    p {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: #8C9CAD;
+      margin: 0;
+    }
+  }
+}
