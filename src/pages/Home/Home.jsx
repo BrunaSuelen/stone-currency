@@ -23,13 +23,20 @@ export default class Home extends Component {
     this.setState(dataToUpdate);
   }
 
+  backToForm() {
+    let dataToUpdate = {...this.state};
+    dataToUpdate.showConversion = false;
+
+    this.setState(dataToUpdate);
+  }
+
   render() {
     return (
       <Background>
         <Header></Header>
         {
           this.state.showConversion
-          ? <Conversion formValues={this.state.formValues}></Conversion>
+          ? <Conversion formValues={this.state.formValues} goBack={() => this.backToForm()}></Conversion>
           : <Form showConversion={(prop) => this.showConvertion(prop)}></Form>
         }
       </Background>
