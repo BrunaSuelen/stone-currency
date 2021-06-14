@@ -3,15 +3,7 @@ import moment from 'moment';
 import logo from "../../assets/images/logo.svg";
 
 const Header = () => {
-  moment.updateLocale('en', {
-    months : [
-      "de Janeiro", "de Fevereiro", "de Março", "de Abril", "de Maio", "de Junho", "de Julho",
-      "de Agosto", "de Setembro", "de Outubro", "de Novembro", "de Dezembro"
-    ]
-  });
-
   const date = moment().format('DD MMMM YYYY | HH:mm') + ' UTC';
-
 
   return (
     <div className="content">
