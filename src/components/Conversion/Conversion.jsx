@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
 import { getQuotation, dollarToRealConverter } from '../../services/quotationService';
+import arrowBack from "../../assets/icons/arrow-back.svg";
 import './Conversion.scss';
 
 export default class Conversion extends Component {
   constructor(props) {
     super(props);
     this.getConversion();
+    this.goBack = props.goBack;
     this.state = { result: 0, formData: props.formValues};
   }
 
@@ -45,6 +47,11 @@ export default class Conversion extends Component {
   render() {
     return (
       <React.Fragment>
+        <button className="button-back" onClick={() => this.goBack()}>
+          <img src={arrowBack} alt='Voltar'/>
+          Voltar
+        </button>
+
         <h5>O resultado do cálculo é</h5>
         <h1>R$ {this.getFormatResult()}</h1>
         <p>Compra no {this.state.formData.isCash ? 'dinheiro' : 'cartão'} e taxa de {this.getFormatResult()}%</p>
