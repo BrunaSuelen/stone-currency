@@ -13,11 +13,7 @@ const Form = (props) => {
     stateFee: 0,
     isCash: true
   }
-  const [formValues, setFormValues] = useState({
-    dollar: formValueDefault.dollar,
-    stateFee: formValueDefault.stateFee,
-    isCash: formValueDefault.isCash
-  });
+  const [formValues, setFormValues] = useState({...formValueDefault});
 
   function onChangeInput(element) {
     let dataToUpdate = {...formValues};
