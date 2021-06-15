@@ -1,0 +1,33 @@
+.container-background {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  object-position: center;
+
+  img {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.content-page {
+  position: absolute;
+  top: 5vh;
+  left: 5vh;
+}
+
+@media only screen and (max-width: 840px) {
+  .container-background img {
+    top: 20vh;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .container-background img {
+    top: 50vh;
+  }
+}

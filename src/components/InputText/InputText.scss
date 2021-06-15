@@ -1,0 +1,44 @@
+.form-input {
+
+  label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2e3742;
+  }
+
+  input {
+    display: flex;
+    align-items: flex-start;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 0 16px;
+    width: 168px;
+    height: 56px;
+    background: #ffffff;
+    border: 1px solid #d7e0eb;
+    border-radius: 4px;
+    box-shadow: 0px 8px 4px #00000014;
+    margin-right: 24px;
+    margin-top: 10px;
+  }
+
+  &.input-text {
+    grid-area: input-left;
+  }
+
+  &.input-right {
+    grid-area: input-right;
+  }
+}
+
+
+@media only screen and (max-width: 840px) {
+  .form-input {
+
+    input {
+      max-width: 10vw;
+      min-width: 50px;
+    }
+  }
+}
