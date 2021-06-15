@@ -1,72 +1,58 @@
-# stone-currency
+<h1 align=center>Stone Currency</h1>
 
-# Getting Started with Create React App
+<p align="center">
+  <a href="#sobre">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#linguagem">Linguagem</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#dependências">Dependências</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#como-executar">Como Executar</a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+--- 
 
-## Available Scripts
+## Sobre
+O sistema Stone Currency é um conversor de dólar para real.
+Que consome base disposta pela API https://docs.awesomeapi.com.br/api-de-moedas
 
-In the project directory, you can run:
+## Objetivo
+A criação do sistema é dada a partir de um desafio proposto pela Stone, afim de conquistar a vaga para frontend.
 
-### `npm start`
+## Linguagem
+O sistema foi desenvolvido em Node.js, com o auxilio do framework React.js
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Dependências
+- [x] **[Axios](https://www.npmjs.com/package/axios)** |
+Cliente HTTP baseado em promessa para o navegador e node.js
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [x] **[Moment.js](https://momentjs.com/)** |
+Modulo que facilita a manipulação, e exibição datas e horas em JavaScript.
 
-### `npm test`
+- [x] **[Node Sass](https://sass-lang.com/)** |
+Linguagem de folhas de estilo para auxiliar na produtividade de códigos CSS.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] **[React Text Mask](https://www.npmjs.com/package/react-text-mask)** |
+Modulo que permite definir como a entrada do usuário será mascarada.
 
-### `npm run build`
+- [x] **[Text Mask Addons](https://www.npmjs.com/package/text-mask-addons)** |
+Modulo adicional que auxilia o React Text Mask nas configurações das máscaras.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Como Executar
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+# Clone este repositório:
+$ git clone https://github.com/BrunaSuelen/stone-currency.git
 
-### `npm run eject`
+# Entre no repositório:
+$ cd stone-currency
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Instale as dependências:
+$ npm install
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Por fim, execute o projeto:
+$ npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Demonstração
+O projeto foi publicado pelo Heroku.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://stone-currency.herokuapp.com
