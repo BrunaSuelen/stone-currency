@@ -1,5 +1,5 @@
 import "./Background.scss";
-import React, { Component } from "react";
+import React from "react";
 
 import wallpaper from "../../assets/images/wallpaper.svg";
 
